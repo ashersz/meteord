@@ -1,3 +1,3 @@
 #!/bin/bash
 set -e
-sudo apt-get -y install graphicsmagick
+apt-get -y install graphicsmagick
