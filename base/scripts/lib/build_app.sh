@@ -13,7 +13,7 @@ meteor build --directory $BUNDLE_DIR --server=http://localhost:3000
 cd $BUNDLE_DIR/bundle/programs/server/
 npm i
 
-mv $BUNDLE_DIR/bundle /built_app
+mv $BUNDLE_DIR/bundle /builtapp
 
 # cleanup
 rm -rf $COPIED_APP_PATH
