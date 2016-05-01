@@ -13,7 +13,7 @@ echo "after meteor build"
 cd $BUNDLE_DIR/bundle/programs/server/
 npm i
 echo " after npm install"
-mv $BUNDLE_DIR/bundle /builtapp
+mv $BUNDLE_DIR/bundle /built_app
 
 # cleanup
 rm -rf $COPIED_APP_PATH
