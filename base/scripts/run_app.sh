@@ -16,9 +16,8 @@ elif [[ $BUNDLE_URL ]]; then
 elif [ -d /built_app ]; then
   cd /built_app
 else
-  echo "=> meteor version:`meteor --version` "
   echo "=> You don't have an meteor app to run in this image."
-  exit 1
+  #exit 1
 fi
 
 if [[ $REBUILD_NPM_MODULES ]]; then
