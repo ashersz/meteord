@@ -8,7 +8,7 @@ BUNDLE_DIR=/tmp/bundle-dir
 cp -R /app $COPIED_APP_PATH
 cd $COPIED_APP_PATH
 echo "app copied to $COPIED_APP_PATH"
-meteor build --debug --directory $BUNDLE_DIR --server=http://localhost:3000
+meteor build --directory $BUNDLE_DIR --server=http://localhost:3000
 echo "after meteor build"
 cd $BUNDLE_DIR/bundle/programs/server/
 npm i
