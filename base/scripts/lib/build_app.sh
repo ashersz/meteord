@@ -14,6 +14,7 @@ cd $BUNDLE_DIR/bundle/programs/server/
 npm i
 echo " after npm install"
 mv $BUNDLE_DIR/bundle /built_app
+touch /var/log/meteor.log
 
 # cleanup
 rm -rf $COPIED_APP_PATH
