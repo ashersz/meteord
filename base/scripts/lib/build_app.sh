@@ -9,8 +9,10 @@ cp -R /app $COPIED_APP_PATH
 cd $COPIED_APP_PATH
 echo "app copied to $COPIED_APP_PATH"
 # next line fixes client dependencies not honored
-npm install && npm cache clear
-echo "after npm install on client side"
+if [ -f "$COPIED_APP_PATH/package.json" ];then
+  echo "install on client side"
+  npm install && npm cache clear
+fi
 meteor build --server-only --directory $BUNDLE_DIR --server=http://localhost:3000
 echo "after meteor build"
 cd $BUNDLE_DIR/bundle/programs/server/
