@@ -27,7 +27,8 @@ if [ -d "$COPIED_APP_PATH/node_modules" ];then
   fi
 fi
 mv $BUNDLE_DIR/bundle /built_app
-touch /var/log/meteor.log
+"echo create dir for logs"
+mkdir -p /var/log/meteor
 
 # cleanup
 rm -rf $COPIED_APP_PATH
