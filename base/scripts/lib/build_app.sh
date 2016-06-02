@@ -8,6 +8,7 @@ BUNDLE_DIR=/tmp/bundle-dir
 cp -R /app $COPIED_APP_PATH
 cd $COPIED_APP_PATH
 echo "app copied to $COPIED_APP_PATH"
+# next line fixes client dependencies not honored
 npm install && npm cache clear
 echo "after npm install on client side"
 meteor build --server-only --directory $BUNDLE_DIR --server=http://localhost:3000
