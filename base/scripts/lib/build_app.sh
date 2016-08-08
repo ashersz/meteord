@@ -31,6 +31,7 @@ echo "create folder for logs"
 mkdir -p /var/log/meteor
 
 # cleanup
+echo "cleanup"
 rm -rf $COPIED_APP_PATH
 rm -rf $BUNDLE_DIR
 rm -rf ~/.meteor
