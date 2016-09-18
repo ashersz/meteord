@@ -1,5 +1,7 @@
 set -e
 echo "starting build_app"
+echo "node version"
+node --version
 COPIED_APP_PATH=/copied-app
 BUNDLE_DIR=/tmp/bundle-dir
 
@@ -12,7 +14,9 @@ echo "app copied to $COPIED_APP_PATH"
 if [ -f "$COPIED_APP_PATH/package.json" ];then
   echo "install on client side"
   npm install && npm cache clear
+  echo "finished install on client side"
 fi
+echo "before meteor build"
 meteor build --server-only --directory $BUNDLE_DIR --server=http://localhost:3000
 echo "after meteor build"
 cd $BUNDLE_DIR/bundle/programs/server/
