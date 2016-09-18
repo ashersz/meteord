@@ -20,6 +20,7 @@ echo "before meteor build"
 meteor build --server-only --directory $BUNDLE_DIR --server=http://localhost:3000
 echo "after meteor build"
 cd $BUNDLE_DIR/bundle/programs/server/
+echo "before npm install server side"
 npm install && npm cache clear
 echo " after npm install server side"
 if [ -d "$COPIED_APP_PATH/node_modules" ];then
