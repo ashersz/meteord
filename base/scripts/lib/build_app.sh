@@ -10,9 +10,6 @@ BUNDLE_DIR=/tmp/bundle-dir
 cp -R /app $COPIED_APP_PATH
 cd $COPIED_APP_PATH
 echo "app copied to $COPIED_APP_PATH"
-echo "before meteor update 1.4.2-beta.4"
-meteor update --release 1.4.2-beta.4
-echo "after meteor update 1.4.2-beta.4"
 # next line fixes client dependencies not honored
 if [ -f "$COPIED_APP_PATH/package.json" ];then
   echo "install on client side"
