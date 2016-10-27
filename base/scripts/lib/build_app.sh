@@ -42,4 +42,3 @@ rm -rf $BUNDLE_DIR
 rm -rf ~/.meteor
 rm /usr/local/bin/meteor
 rm -rf /app
-echo "bye bye"
