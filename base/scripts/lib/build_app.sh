@@ -16,9 +16,9 @@ if [ -f "$COPIED_APP_PATH/package.json" ];then
   npm install && npm cache clear
   echo "finished install on client side"
 fi
-echo "before meteor build with --unsafe-perm"
+echo "before meteor build"
 meteor build --unsafe-perm --server-only --directory $BUNDLE_DIR --server=http://localhost:3000
-echo "after meteor build with --unsafe-perm"
+echo "after meteor build"
 cd $BUNDLE_DIR/bundle/programs/server/
 echo "before npm install server side"
 npm install && npm cache clear
