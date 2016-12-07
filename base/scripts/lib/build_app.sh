@@ -4,7 +4,10 @@ echo "node version"
 node --version
 COPIED_APP_PATH=/copied-app
 BUNDLE_DIR=/tmp/bundle-dir
-
+# Fix permissions warning in Meteor >=1.4.2.1 without breaking
+# earlier versions of Meteor with --unsafe-perm or --allow-superuser
+# https://github.com/meteor/meteor/issues/7959
+export METEOR_ALLOW_SUPERUSER=true
 # sometimes, directly copied folder cause some wierd issues
 # this fixes that
 cp -R /app $COPIED_APP_PATH
