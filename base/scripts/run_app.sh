@@ -40,5 +40,5 @@ fi
 # Honour already existing PORT setup
 export PORT=${PORT:-80}
 
-echo "=> Starting meteor app on port:$PORT"
+echo "=> Starting meteor app on port:$PORT with output and error logs"
 node main.js > /var/log/meteor/node_output.log   2> /var/log/meteor/node_err.log
