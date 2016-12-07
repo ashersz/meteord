@@ -13,15 +13,17 @@ export METEOR_ALLOW_SUPERUSER=true
 cp -R /app $COPIED_APP_PATH
 cd $COPIED_APP_PATH
 echo "app copied to $COPIED_APP_PATH"
+# read in the release version in the app
+METEOR_VERSION=$(head $COPIED_APP_PATH/.meteor/release | cut -d "@" -f 2)
 # next line fixes client dependencies not honored
 if [ -f "$COPIED_APP_PATH/package.json" ];then
   echo "install on client side"
   npm install && npm cache clear
   echo "finished install on client side"
 fi
-echo "before meteor build version 1.4.0.1"
+echo "before meteor build version $METEOR_VERSION"
 meteor build --server-only --directory $BUNDLE_DIR --server=http://localhost:3000
-echo "after meteor build version 1.4.0.1"
+echo "after meteor build $METEOR_VERSION"
 cd $BUNDLE_DIR/bundle/programs/server/
 echo "before npm install server side"
 npm install && npm cache clear
