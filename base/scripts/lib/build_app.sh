@@ -8,6 +8,7 @@ BUNDLE_DIR=/tmp/bundle-dir
 # earlier versions of Meteor with --unsafe-perm or --allow-superuser
 # https://github.com/meteor/meteor/issues/7959
 export METEOR_ALLOW_SUPERUSER=true
+echo "METEOR_ALLOW_SUPERUSER=$METEOR_ALLOW_SUPERUSER"
 # sometimes, directly copied folder cause some wierd issues
 # this fixes that
 cp -R /app $COPIED_APP_PATH
